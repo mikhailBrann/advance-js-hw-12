@@ -1,11 +1,13 @@
-import Cart from './service/Cart';
-import Book from './domain/Book';
-import MusicAlbum from './domain/MusicAlbum';
+import Gadget from "./domain/Gadget";
+import Cart from "./service/Cart";
 
+const gadgets = [
+    new Gadget(4, 'iphone 5', 1000, 'phone', 3),
+    new Gadget(5, 'lenovo note', 2000, 'notebook', 1),
+];
+  
 const cart = new Cart();
-console.log(cart.items);
 
-cart.add(new Book(1001, 'War and Piece', 'Leo Tolstoy', 2000, 1225));
-cart.add(new MusicAlbum(1008, 'Meteora', 'Linkin Park', 900));
 
+gadgets.forEach(gadget => cart.add(gadget));
 console.log(cart.items);
